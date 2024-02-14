@@ -1,0 +1,19 @@
+{
+  "name": "foodapp",
+  "version": "1.0.0",
+  "description": "This is a food app",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharmakeshav10/good-food.git"
+  },
+  "author": "Keshav Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sharmakeshav10/good-food/issues"
+  },
+  "homepage": "https://github.com/sharmakeshav10/good-food#readme"
+}
