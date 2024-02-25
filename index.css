@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.app-logo {
+  width: 100px;
+}
+
+/* .nav-items-container {
+  margin: 10px;
+} */
+
+.nav-items {
+  display: flex;
+  list-style: none;
+}
+
+.nav-items > li {
+  padding: 5px;
+  margin: 10px;
+}
+
+.res-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* restaurant card */
+.res-card {
+  width: 250px;
+  height: 300px;
+  border: 1px black solid;
+  margin: 15px;
+}
+
+.res-img {
+  object-fit: cover;
+  height: 150px;
+  width: 100%;
+}
