@@ -41,3 +41,8 @@
   height: 150px;
   width: 100%;
 }
+
+/* top rated button */
+.top-rated-btn {
+  margin: 10px;
+}
