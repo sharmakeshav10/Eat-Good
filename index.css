@@ -43,6 +43,6 @@
 }
 
 /* top rated button */
-.top-rated-btn {
+.top-rated-btn .search-container {
   margin: 10px;
 }

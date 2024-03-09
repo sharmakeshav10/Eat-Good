@@ -2,7 +2,6 @@
   "name": "foodapp",
   "version": "1.0.0",
   "description": "This is a food app",
-  
   "scripts": {
     "start": "parcel index.html",
     "build": "pacel build index.html",
@@ -24,6 +23,7 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-shimmer-effects": "^1.0.3"
   }
 }
