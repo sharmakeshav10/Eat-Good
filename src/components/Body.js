@@ -10,6 +10,7 @@ const Body = () => {
     []
   );
   const [searchText, setSearchText] = useState("");
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -28,6 +29,8 @@ const Body = () => {
     setFilteredListOfRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+
+    setTitle(json?.data?.cards[2]?.card?.card?.title);
   };
 
   const filterTopRatedRes = () => {
@@ -47,34 +50,45 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="filter-btn-container" style={{ display: "flex" }}>
+      <div>
         <div className="top-rated">
           <button className="top-rated-btn" onClick={filterTopRatedRes}>
             Top Rated
           </button>
         </div>
-        <div className="search-container">
+        <div className="flex items-center justify-center mb-6">
           <input
+            className="w-30 py-2 border border-slate-300 rounded-lg"
             type="text"
-            placeholder="search.."
+            placeholder="Search.."
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
               console.log(e.target.value);
             }}
           />
-          <button onClick={searchRestauantHandler}>Search</button>
+          <div className="ml-1">
+            <button
+              className="py-2 px-4 rounded-lg bg-black text-white hover:text-black hover:bg-white"
+              onClick={searchRestauantHandler}
+            >
+              Search
+            </button>
+          </div>
         </div>
       </div>
-      <div className="res-container">
-        {filteredListOfRestaurants.map((restaurant) => (
-          <Link
-            key={restaurant.info.id}
-            to={"/restaurant/" + restaurant.info.id}
-          >
-            <RestaurantCard resData={restaurant} />
-          </Link>
-        ))}
+      <div>
+        {/* <div>{title}</div> */}
+        <div className="flex flex-wrap justify-center items-center">
+          {filteredListOfRestaurants.map((restaurant) => (
+            <Link
+              key={restaurant.info.id}
+              to={"/restaurant/" + restaurant.info.id}
+            >
+              <RestaurantCard resData={restaurant} />
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

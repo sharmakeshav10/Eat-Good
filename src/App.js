@@ -6,13 +6,17 @@ import Error from "./components/Error";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import About from "./components/About";
 import RestaurantMenu from "./components/RestaurantMenu";
+import useOnlineStatus from "./utils/useOnlineStatus";
 
 const AppLayout = () => {
-  return (
+  const onlineStatus = useOnlineStatus();
+  return onlineStatus === true ? (
     <div className="app">
       <Header />
       <Outlet />
     </div>
+  ) : (
+    <h1>Looks like you're offline! Please check your internet connection</h1>
   );
 };
 
