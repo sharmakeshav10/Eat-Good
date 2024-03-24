@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import resList from "../utils/mockData";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withDiscountLabel } from "./RestaurantCard";
 import RestaurantCardShimmer from "./RestaurantCardShimmer";
 import { Link } from "react-router-dom";
 
@@ -48,6 +48,8 @@ const Body = () => {
     setFilteredListOfRestaurants(searchRestaurantResults);
   };
 
+  const ResCardWithDiscountLabel = withDiscountLabel(RestaurantCard);
+
   return (
     <div className="body">
       <div>
@@ -85,7 +87,11 @@ const Body = () => {
               key={restaurant.info.id}
               to={"/restaurant/" + restaurant.info.id}
             >
-              <RestaurantCard resData={restaurant} />
+              {restaurant.info.aggregatedDiscountInfoV3 ? (
+                <ResCardWithDiscountLabel resData={restaurant} />
+              ) : (
+                <RestaurantCard resData={restaurant} />
+              )}
             </Link>
           ))}
         </div>

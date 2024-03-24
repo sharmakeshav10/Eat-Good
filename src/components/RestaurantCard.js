@@ -29,4 +29,22 @@ const RestaurantCard = (props) => {
   );
 };
 
+export const withDiscountLabel = (RestaurantCard) => {
+  return (props) => {
+    const { resData } = props;
+
+    const { aggregatedDiscountInfoV3 } = resData.info;
+    return (
+      <div className="flex items-center justify-end">
+        <div className="absolute p-2 m-3 text-white font-extrabold text-lg">
+          {aggregatedDiscountInfoV3.header +
+            " " +
+            aggregatedDiscountInfoV3.subHeader}
+        </div>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
+
 export default RestaurantCard;
