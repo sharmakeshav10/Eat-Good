@@ -10,7 +10,7 @@ const Body = () => {
     []
   );
   const [searchText, setSearchText] = useState("");
-  const [title, setTitle] = useState("");
+  // const [title, setTitle] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -30,7 +30,7 @@ const Body = () => {
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
 
-    setTitle(json?.data?.cards[2]?.card?.card?.title);
+    // setTitle(json?.data?.cards[2]?.card?.card?.title);
   };
 
   const filterTopRatedRes = () => {

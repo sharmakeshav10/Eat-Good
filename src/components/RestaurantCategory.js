@@ -3,11 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MenuList from "./MenuList";
 import { useState } from "react";
 
-const RestaurantCategory = ({ data }) => {
-  const [showItems, setShowItems] = useState(false);
-
+const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
   const handleAccordionClick = () => {
-    setShowItems(!showItems);
+    setShowIndex();
   };
 
   return (
